@@ -1,5 +1,3 @@
-import java.util.IllegalFormatConversionException;
-
 /**
  * Created by Niklas Königsson dv15nkn on 2016-04-04.
  */

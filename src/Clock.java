@@ -1,5 +1,3 @@
-import static java.lang.String.format;
-
 /**
  * Created by Niklas Königsson dv15nkn on 2016-04-04.
  */

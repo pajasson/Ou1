@@ -1,5 +1,5 @@
 /**
- * Created by konig on 2016-04-06.
+ * Created by Niklas Königsson dv15nkn on 2016-04-06.
  */
 import java.util.Scanner;
 

@@ -16,13 +16,13 @@ public class Alarm extends Clock{
     @Override
     public void timeTick(){
 
+        super.timeTick();
+
         if(alarmActive && (hours.getValue() == alarmHour)
                 && (minutes.getValue() == alarmMinute)){
 
-            System.out.printf("Alarm");
-
+            System.out.printf("\nAlarm");
         }
-        super.timeTick();
     }
 
     public void setAlarm(int hour, int minute){
