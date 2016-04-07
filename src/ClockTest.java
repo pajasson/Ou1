@@ -1,6 +1,10 @@
 /**
  * Created by Niklas Königsson dv15nkn on 2016-04-05.
  */
+
+/**
+ * Simple testprograms for the clock class
+ */
 import org.junit.Test;
 
 import static org.junit.Assert.*;
