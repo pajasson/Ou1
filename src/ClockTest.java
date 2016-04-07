@@ -1,5 +1,5 @@
 /**
- * Created by konig on 2016-04-05.
+ * Created by Niklas Königsson dv15nkn on 2016-04-05.
  */
 import org.junit.Test;
 
@@ -9,14 +9,14 @@ public class ClockTest {
 
 
     @Test
-    public void DisplayTest() throws Exception {
+    public void newClockTest() throws Exception {
 
         Clock newClock = new Clock();
         assertEquals("00:00", newClock.getTime());
     }
 
     @Test
-    public void ClockTickAndWrapTest() throws Exception {
+    public void clockTickAndWrapTest() throws Exception {
 
         Clock newClock = new Clock(23, 59);
         newClock.timeTick();
@@ -24,7 +24,7 @@ public class ClockTest {
     }
 
     @Test
-    public void SetClockTest() throws Exception {
+    public void setClockTest() throws Exception {
 
         Clock newClock = new Clock();
         newClock.setTime(22, 22);

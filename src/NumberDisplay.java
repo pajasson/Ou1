@@ -1,7 +1,7 @@
 import java.util.IllegalFormatConversionException;
 
 /**
- * Created by konig on 2016-04-04.
+ * Created by Niklas Königsson dv15nkn on 2016-04-04.
  */
 public class NumberDisplay {
 
@@ -35,7 +35,7 @@ public class NumberDisplay {
 
     public void increment(){
 
-        if(value + 1 < maxLimit){
+        if(value < maxLimit){
             value++;
         }else{
             value = minLimit;

@@ -1,7 +1,7 @@
 import static java.lang.String.format;
 
 /**
- * Created by konig on 2016-04-04.
+ * Created by Niklas Königsson dv15nkn on 2016-04-04.
  */
 public class Clock {
 
@@ -33,9 +33,12 @@ public class Clock {
     }
 
     public void setTime(int hour, int minute){
-
-        hours.setValue(hour);
-        minutes.setValue(minute);
+        if(hour >= 0 && hour < 24){
+            hours.setValue(hour);
+        }
+        if(minute >= 0 && minute < 60){
+            minutes.setValue(minute);
+        }
     }
 
     public String getTime(){
@@ -44,8 +47,10 @@ public class Clock {
         return displayString;
     }
 
-    private void updateDisplay(){
+    protected void updateDisplay(){
 
-        displayString = String.format("%s:%s", hours.getDisplayValue(), minutes.getDisplayValue());
+        displayString = String.format("%s:%s", hours.getDisplayValue(),
+                                      minutes.getDisplayValue());
+
     }
 }
