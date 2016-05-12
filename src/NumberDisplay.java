@@ -42,6 +42,16 @@ public class NumberDisplay {
      */
     public void setValue(int newValue){
 
+        if(newValue < minLimit){
+
+            throw new IllegalArgumentException("entered value is too low");
+        }
+
+        if(newValue > maxLimit){
+
+            throw new IllegalArgumentException("entered value is too high");
+        }
+
         value = newValue;
     }
 

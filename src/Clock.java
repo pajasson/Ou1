@@ -7,9 +7,9 @@
  */
 public class Clock {
 
-    protected NumberDisplay hours;
-    protected NumberDisplay minutes;
-    protected String displayString;
+    private NumberDisplay hours;
+    private NumberDisplay minutes;
+    private String displayString;
 
     /**
      * Constructor for the clock
@@ -18,29 +18,24 @@ public class Clock {
 
         hours = new NumberDisplay(0, 23);
         minutes = new NumberDisplay(0, 59);
+        setTime(0,0);
+        updateDisplay();
     }
 
     /**
      * Constructor for the clock
      * @param hour sets the new clocks hour to this value
      * @param minute sets the new clocks minute to this value
-     * @throws IllegalArgumentException
      */
-    public Clock(int hour, int minute) throws IllegalArgumentException {
+    public Clock(int hour, int minute) {
 
-        if(hour > 23 || hour < 0)
-        {
-            throw new IllegalArgumentException("Hour out of range");
-        }
-        if(minute > 59 || minute < 0)
-        {
-            throw new IllegalArgumentException("Minute out of range");
-        }
         hours = new NumberDisplay(0, 23);
         minutes = new NumberDisplay(0, 59);
 
         hours.setValue(hour);
         minutes.setValue(minute);
+
+        updateDisplay();
     }
 
     /**
@@ -52,26 +47,20 @@ public class Clock {
         if(minutes.didWrapAround()){
             hours.increment();
         }
+        updateDisplay();
     }
 
     /**
      * Sets the clocks time;
      * @param hour sets the clocks hour to this value
      * @param minute sets the clocks minute to this value
-     * @throws IllegalArgumentException
      */
     public void setTime(int hour, int minute){
 
-        if(hour > 23 || hour < 0)
-        {
-            throw new IllegalArgumentException("Hour out of range");
-        }
-        if(minute > 59 || minute < 0)
-        {
-            throw new IllegalArgumentException("Minute out of range");
-        }
         hours.setValue(hour);
         minutes.setValue(minute);
+
+        updateDisplay();
     }
 
     /**
@@ -80,14 +69,13 @@ public class Clock {
      */
     public String getTime(){
 
-        updateDisplay();
         return displayString;
     }
 
     /**
-     * Internal method used by getTime
+     * Updates the timedisplay
      */
-    protected void updateDisplay(){
+    private void updateDisplay(){
 
         displayString = String.format("%s:%s", hours.getDisplayValue(),
                                       minutes.getDisplayValue());
